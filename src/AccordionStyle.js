@@ -8,6 +8,8 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Card from "@material-ui/core/Card";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import {Link} from "react-router-dom"
+import Button from '@material-ui/core/Button';
 import Typography from "@material-ui/core/Typography";
 
 
@@ -23,6 +25,12 @@ class AccordionStyle extends React.Component{
     render(){
         return(
             <>
+          <Link component={Button} color="inherit" to="/AvatarOne">
+			      New Action Movies
+		    </Link>
+        <Link component={Button} color="inherit" to="/AvatarTwo">
+			      Horror and Drama Movies
+		    </Link>
             <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}

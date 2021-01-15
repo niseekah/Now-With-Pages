@@ -1,12 +1,32 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
+import AvatarOne from "./AvatarOne";
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import AccordionStyle from './AccordionStyle';
+import AvatarTwo from './AvatarTwo';
+import {Link} from "react-router-dom"
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <App />
+
+      <Switch>
+          <Route path="/AvatarOne">
+              <AvatarOne />
+          </Route>
+           <Route path="/AvatarTwo">
+			      <AvatarTwo /> 
+		    </Route>
+      </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

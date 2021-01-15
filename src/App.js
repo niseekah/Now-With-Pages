@@ -24,6 +24,7 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import TextField from "@material-ui/core/TextField";
+import { render } from "react-dom";
 
 let anchorEl;
 let open = false;
@@ -49,108 +50,106 @@ function App() {
   const [state, setState] = React.useState({
     left: false,
   });
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
+  // const toggleDrawer = (anchor, open) => (event) => {
+  //   if (
+  //     event.type === "keydown" &&
+  //     (event.key === "Tab" || event.key === "Shift")
+  //   ) {
+  //     return;
+  //   }
 
-    setState({ ...state, [anchor]: open });
-  };
+  //   setState({ ...state, [anchor]: open });
+  // };
 
-  const list = (anchor) => (
-    <div
-      className={clsx(classes.list, {
-        [classes.fullList]: anchor === "top" || anchor === "bottom",
-      })}
-      role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
-    >
-      <List>
-        {["Action Movies", "Family Movies", "Comedy", "Actors & Actresses"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {["TOP 10", "CLASSICS", "RECOMMENDED"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-    </div>
-  );
+  // const list = (anchor) => (
+  //   <div
+  //     className={clsx(classes.list, {
+  //       [classes.fullList]: anchor === "top" || anchor === "bottom",
+  //     })}
+    //   role="presentation"
+    //   onClick={toggleDrawer(anchor, false)}
+    //   onKeyDown={toggleDrawer(anchor, false)}
+    // >
 
 
-  return (
-    
-
-    <div>
+    return (
+      
+      
       <AccordionStyle></AccordionStyle>
+    // {/*Rosanne ==============================================================================================================================*/}
+    //     <AppbarStyle></AppbarStyle>
 
-  {/*Rosanne ==============================================================================================================================*/}
-      <AppbarStyle></AppbarStyle>
-
-      <form noValidate>
-        <TextField
-          id="datetime-local"
-          label="Next appointment"
-          type="datetime-local"
-          defaultValue="2021-01-12 T 03:30PM"
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
-      </form>
-{/*Rosanne =========================================================================================================================================*/}
-
+    //     <form noValidate>
+    //       <TextField
+    //         id="datetime-local"
+    //         label="Next appointment"
+    //         type="datetime-local"
+    //         defaultValue="2021-01-12 T 03:30PM"
+    //         InputLabelProps={{
+    //           shrink: true,
+    //         }}
+    //       />
+    //     </form>
+    // {/*Rosanne =========================================================================================================================================*/}
 
 
-{/*Bijorn =================================================================================================================================================*/}
-     <CustomCard></CustomCard>
-     <CustomFormGroup></CustomFormGroup>
-      <div>
-        {["menu"].map((anchor) => (
-          <React.Fragment key={anchor}>
-            <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
-            <Drawer
-              anchor={anchor}
-              open={state[anchor]}
-              onClose={toggleDrawer(anchor, false)}
-            >
-              {list(anchor)}
-            </Drawer>
-          </React.Fragment>
-        ))}
-      </div>
- {/*Bijorn =================================================================================================================================================*/} 
+
+    // {/*Bijorn =================================================================================================================================================*/}
+    //   <CustomCard></CustomCard>
+    //   <CustomFormGroup></CustomFormGroup>
+    //     <div>
+    //       {["menu"].map((anchor) => (
+    //         <React.Fragment key={anchor}>
+    //           {/* <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button> */}
+    //           <Drawer
+    //             anchor={anchor}
+    //             open={state[anchor]}
+    //             //onClose={toggleDrawer(anchor, false)}
+    //           >
+    //             {/* {list(anchor)} */}
+    //           </Drawer>
+    //         </React.Fragment>
+    //       ))}
+    //     </div>
+
+    //     <List>
+    //         {["Action Movies", "Family Movies", "Comedy", "Actors & Actresses"].map((text, index) => (
+    //           <ListItem button key={text}>
+    //             <ListItemText primary={text} />
+    //           </ListItem>
+    //         ))}
+    //       </List>
+    //       <Divider />
+    //       <List>
+    //         {["TOP 10", "CLASSICS", "RECOMMENDED"].map((text, index) => (
+    //           <ListItem button key={text}>
+    //             <ListItemText primary={text} />
+    //           </ListItem>
+    //         ))}
+    //       </List>
+    // {/*Bijorn =================================================================================================================================================*/} 
 
 
-{/*Niseekah  =====================================================================================================================================================================================*/}
-    <div className = "App-background">
-      <div className = "App-row">
-          <div className = "App-column">
-              <AvatarOne></AvatarOne>
-          </div>
-          
-      </div>
+    // {/*Niseekah  =====================================================================================================================================================================================*/}
+      
+    //     <div className = "App-background">
+    //     <div className = "App-row">
+    //         <div className = "App-column">
+    //             <AvatarOne></AvatarOne>
+    //         </div>
+            
+    //     </div> 
 
 
-      <div className = "App-row">
-          <div className = "App-column">
-            <AvatarTwo></AvatarTwo>
-          </div>
-      </div>
-    </div> 
-{/*Niseekah  ===============================================================================================================================*/}   
-    </div>
-  );
+    //     <div className = "App-row">
+    //         <div className = "App-column">
+    //           <AvatarTwo></AvatarTwo>
+    //         </div>
+    //     </div>
+    //    </div> 
+       
+    // </div>
+    );
 }
 
 export default App;
